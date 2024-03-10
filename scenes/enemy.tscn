@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cimacgmk2ky3b"]
+
+[ext_resource type="Texture2D" uid="uid://pn3fnhqqdto0" path="res://assets/textures/enemy_ship.png" id="1_dr88l"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_td14v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_evvoa"]
+radius = 27.0
+height = 122.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ioa2f"]
+radius = 11.4018
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_td14v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dr88l")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_evvoa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(9, -32)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_ioa2f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(7, 29)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_ioa2f")
