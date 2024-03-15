@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 360
+@export var speed = 120
 
 @onready var visible_notifier = $VisibleNotifier
 
@@ -13,3 +13,7 @@ func _physics_process(delta):
 
 func _on_screen_exited():
 	queue_free()
+
+func _on_area_entered(area):
+	queue_free()
+	area.queue_free()
