@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 120
+@export var speed = 300
 
 @onready var visible_notifier = $VisibleNotifier
 
@@ -16,4 +16,4 @@ func _on_screen_exited():
 
 func _on_area_entered(area):
 	queue_free()
-	area.queue_free()
+	area.die()
