@@ -1,9 +1,6 @@
 extends Area2D
-
-@export var speed = 300
-
+@export var speed = 360
 @onready var visible_notifier = $VisibleNotifier
-
 
 func _ready():
 	visible_notifier.connect("screen_exited", _on_screen_exited)

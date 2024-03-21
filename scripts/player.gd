@@ -9,7 +9,7 @@ var rocket_scene = preload("res://scenes/rocket.tscn")
 signal took_damage
 
 func _process(delta):
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
 func _physics_process(delta):
@@ -25,9 +25,7 @@ func _physics_process(delta):
 		velocity.y = speed
 	
 	move_and_slide()
-	
 	var screen_size = get_viewport_rect().size
-		 
 	global_position = global_position.clamp(Vector2(0,0), screen_size)
 
 func shoot():
