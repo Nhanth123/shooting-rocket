@@ -17,11 +17,11 @@ func spawn_enemy():
 	
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.global_position = random_spawn_position.global_position
-	emit_signal("enemy_spawned", enemy_instance)
+	enemy_spawned.emit(enemy_instance)
 
 func _on_path_enemy_timer_timeout():
 	spawn_path_enemy()
 
 func spawn_path_enemy():
 	var path_enemy_instance = path_enemy_scene.instantiate()
-	emit_signal("path_enemy_spawned", path_enemy_instance)
+	path_enemy_spawned.emit(path_enemy_instance)

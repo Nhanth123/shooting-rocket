@@ -6,7 +6,7 @@ func _physics_process(delta):
 	global_position.x += -speed * delta
 
 func die():
-	emit_signal("died")
+	died.emit()
 	queue_free()
 
 func _on_body_entered(body):
